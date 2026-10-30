@@ -59,7 +59,6 @@ const STEPS = [
 const FAQ = [
   { q: "Is there a fixed price?", a: "No. Every serious offer is reviewed and answered." },
   { q: "Which coins do you accept?", a: "USDT and USDC. The network is agreed before payment." },
-  { q: "Can we use escrow?", a: "Yes. An escrow agent trusted by both sides is welcome." },
   {
     q: "How is the domain transferred?",
     a: "By a push to your account at the same registrar, or with an authorization code so you can move it to your own registrar.",
