@@ -1,29 +1,19 @@
-# Welcome to your Lovable project
+# Willgrow.Tech for sale
 
-This project was built with [Lovable](https://lovable.dev).
+Каркас на TanStack Start (React 19, Vite, Tailwind v4).
 
-## Build with Lovable
+## Структура
+- `src/routes/` — страницы (файловый роутинг)
+- `src/lib/telegram.server.ts` — серверный хелпер `telegram(method, body)` для Telegram Bot API
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Telegram
+Бот: @JRBelfort_bot (id 8620564840), подключён через коннектор Lovable.
+Секреты (только сервер): `LOVABLE_API_KEY`, `TELEGRAM_API_KEY`. Токен бота в коде не нужен.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+Пример (внутри `createServerFn`):
+```ts
+import { telegram } from "@/lib/telegram.server";
+await telegram("sendMessage", { chat_id: 123, text: "Привет" });
 ```
 
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+Приём сообщений: webhook на `src/routes/api/public/telegram/webhook.ts` + `setWebhook` (пока не настроен).
