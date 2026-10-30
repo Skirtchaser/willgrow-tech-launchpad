@@ -3,8 +3,8 @@
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/telegram";
 
 export async function telegram<T = unknown>(method: string, body: Record<string, unknown> = {}): Promise<T> {
-  const lovableKey = process.env.LOVABLE_API_KEY;
-  const telegramKey = process.env.TELEGRAM_API_KEY;
+  const lovableKey = process.env["LOVABLE_API_KEY"];
+  const telegramKey = process.env["TELEGRAM_API_KEY"];
   if (!lovableKey) throw new Error("LOVABLE_API_KEY is not configured");
   if (!telegramKey) throw new Error("TELEGRAM_API_KEY is not configured");
 
